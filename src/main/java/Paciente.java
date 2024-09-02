@@ -5,6 +5,7 @@ public class Paciente
     private String cpf;
     private String telefone;
     private String genero;
+    private String idade;
 
     public Paciente() {}
 
@@ -17,38 +18,12 @@ public class Paciente
         setIdade(idade);
     }
 
-    private String idade;
-
     public long getCodigo() {
         return codigo;
     }
 
     public void setCodigo(long codigo) {
         this.codigo = codigo;
-    }
-
-    public String getIdade() {
-        return idade;
-    }
-
-    public void setIdade(String idade) {
-        this.idade = idade;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -59,12 +34,36 @@ public class Paciente
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 
     public void cadastrar()

@@ -1,15 +1,27 @@
 public class Recepcionista
 {
+    private long codigo;
     private String nome;
     private String cpf;
     private String telefone;
     private String senha;
 
-    public Recepcionista(String nome, String cpf, String telefone, String senha) {
+    public Recepcionista() {}
+
+    public Recepcionista(long codigo, String nome, String cpf, String telefone, String senha) {
+        setCodigo(codigo);
         setNome(nome);
         setCpf(cpf);
         setTelefone(telefone);
         setSenha(senha);
+    }
+
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -52,6 +64,7 @@ public class Recepcionista
     public void mostrar()
     {
         System.out.println("Recepcionista>>>>>>>>>>");
+        System.out.println("codigo:"+ getCodigo());
         System.out.println("nome:"+ getNome());
         System.out.println("cpf:"+ getCpf());
         System.out.println("telefone:"+ getTelefone());

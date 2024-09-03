@@ -1,15 +1,27 @@
 public class Agenda
 {
+    private long codigo;
     private String data;
     private String hora;
     private String medico;
     private String paciente;
 
-    public Agenda(String data, String hora, String medico, String paciente) {
+    public Agenda() {}
+
+    public Agenda(long codigo, String data, String hora, String medico, String paciente) {
+        setCodigo(codigo);
         setData(data);
         setHora(hora);
         setMedico(medico);
         setPaciente(paciente);
+    }
+
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
     }
 
     public String getData() {
@@ -52,6 +64,7 @@ public class Agenda
     public void mostrar()
     {
         System.out.println("Agenda>>>>>>>>>>");
+        System.out.println("codigo:"+ getCodigo());
         System.out.println("data:"+ getData());
         System.out.println("hora:"+ getHora());
         System.out.println("medico:"+ getMedico());

@@ -1,5 +1,6 @@
 public class Consulta
 {
+    private long codigo;
     private String data;
     private String hora;
     private String medico;
@@ -7,13 +8,25 @@ public class Consulta
     private String motivo;
     private String historico;
 
-    public Consulta(String data, String hora, String medico, String paciente, String motivo, String historico) {
+    public Consulta() {}
+
+
+    public Consulta(long codigo, String data, String hora, String medico, String paciente, String motivo, String historico) {
+        setCodigo(codigo);
         setData(data);
         setHora(hora);
         setMedico(medico);
         setPaciente(paciente);
         setMotivo(motivo);
         setHistorico(historico);
+    }
+
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
     }
 
     public String getData() {
@@ -92,6 +105,7 @@ public class Consulta
     public void mostrar()
     {
         System.out.println("Consulta>>>>>>>>>>");
+        System.out.println("codigo:"+ getCodigo());
         System.out.println("data:"+ getData());
         System.out.println("hora:"+ getHora());
         System.out.println("medico:"+ getMedico());

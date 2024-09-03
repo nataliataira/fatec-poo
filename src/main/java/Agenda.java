@@ -8,7 +8,7 @@ public class Agenda
 
     public Agenda() {}
 
-    public Agenda(long codigo, String data, String hora, String medico, String paciente) {
+    public Agenda(long codigo, String data, String hora, String medico, String paciente) throws Exception   {
         setCodigo(codigo);
         setData(data);
         setHora(hora);
@@ -20,8 +20,12 @@ public class Agenda
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setCodigo(long codigo) throws Exception{
+        if (codigo <= 0) {
+            throw new Exception("Código não pode ser menor ou igual a zero.");
+        } else {
+            this.codigo = codigo;
+        }
     }
 
     public String getData() {
@@ -44,8 +48,14 @@ public class Agenda
         return medico;
     }
 
-    public void setMedico(String medico) {
-        this.medico = medico;
+    public void setMedico(String medico) throws Exception{
+        if (medico.isEmpty()) {
+            throw new Exception("O nome do médico deve ser preenchido.");
+        } else if (medico.length() > 100) {
+            throw new Exception("Nome deve ter entre 1 e 100 caracteres.");
+        } else {
+            this.medico = medico;
+        }
     }
 
     public String getPaciente() {

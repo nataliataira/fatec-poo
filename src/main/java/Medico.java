@@ -9,7 +9,7 @@ public class Medico
 
     public Medico() {}
 
-    public Medico(long codigo, String nome, String crm, String telefone, String especialidade, String senha) {
+    public Medico(long codigo, String nome, String crm, String telefone, String especialidade, String senha) throws Exception {
         setCodigo(codigo);
         setNome(nome);
         setCrm(crm);
@@ -22,16 +22,26 @@ public class Medico
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setCodigo(long codigo) throws Exception {
+        if (codigo <= 0) {
+            throw new Exception("Código não pode ser menor ou igual a zero.");
+        } else {
+            this.codigo = codigo;
+        }
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+        if (nome.isEmpty()) {
+            throw new Exception("O nome deve ser preenchido.");
+        } else if (nome.length() > 100) {
+            throw new Exception("Nome deve ter entre 1 e 100 caracteres.");
+        } else {
+            this.nome = nome;
+        }
     }
 
     public String getCrm() {
@@ -46,8 +56,12 @@ public class Medico
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws Exception {
+        if (!telefone.matches("[0-9]+")) {
+            throw new Exception("O telefone não deve conter letras.");
+        } else {
+            this.telefone = telefone;
+        }
     }
 
     public String getEspecialidade() {
@@ -62,8 +76,12 @@ public class Medico
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(String senha) throws Exception{
+        if (senha.length() < 5) {
+            throw new Exception("Senha muito curta.");
+        } else {
+            this.senha = telefone;
+        }
     }
 
     public void acessar()

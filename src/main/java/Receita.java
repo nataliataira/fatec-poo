@@ -7,7 +7,7 @@ public class Receita
 
     public Receita() {}
 
-    public Receita(String consulta, String data, String descritivo) {
+    public Receita(String consulta, String data, String descritivo) throws Exception {
         setCodigo(codigo);
         setConsulta(consulta);
         setData(data);
@@ -18,8 +18,12 @@ public class Receita
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setCodigo(long codigo) throws Exception {
+        if (codigo <= 0) {
+            throw new Exception("Código não pode ser menor ou igual a zero.");
+        } else {
+            this.codigo = codigo;
+        }
     }
 
     public String getConsulta() {

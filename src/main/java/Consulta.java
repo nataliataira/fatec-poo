@@ -11,7 +11,7 @@ public class Consulta
     public Consulta() {}
 
 
-    public Consulta(long codigo, String data, String hora, String medico, String paciente, String motivo, String historico) {
+    public Consulta(long codigo, String data, String hora, String medico, String paciente, String motivo, String historico) throws Exception {
         setCodigo(codigo);
         setData(data);
         setHora(hora);
@@ -25,8 +25,12 @@ public class Consulta
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setCodigo(long codigo) throws Exception {
+        if (codigo <= 0) {
+            throw new Exception("Código não pode ser menor ou igual a zero.");
+        } else {
+            this.codigo = codigo;
+        }
     }
 
     public String getData() {
@@ -49,8 +53,14 @@ public class Consulta
         return medico;
     }
 
-    public void setMedico(String medico) {
-        this.medico = medico;
+    public void setMedico(String medico) throws Exception{
+        if (medico.isEmpty()) {
+            throw new Exception("O nome do médico deve ser preenchido.");
+        } else if (medico.length() > 100) {
+            throw new Exception("Nome deve ter entre 1 e 100 caracteres.");
+        } else {
+            this.medico = medico;
+        }
     }
 
     public String getPaciente() {

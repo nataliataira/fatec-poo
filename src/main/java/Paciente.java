@@ -52,7 +52,7 @@ public class Paciente
     }
 
     public void setCpf(String cpf) throws Exception {
-        if (cpf.isEmpty() || cpf.length() > 11) {
+        if (cpf.isEmpty() || cpf.length() < 11) {
             throw new Exception("O CPF deve conter 11 dígitos.");
         } else {
             this.cpf = cpf;

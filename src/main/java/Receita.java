@@ -1,13 +1,13 @@
 public class Receita
 {
     private long codigo;
-    private String consulta;
+    private Consulta consulta;
     private String data;
     private String descritivo;
 
     public Receita() {}
 
-    public Receita(String consulta, String data, String descritivo) throws Exception {
+    public Receita(Consulta consulta, String data, String descritivo) throws Exception {
         setCodigo(codigo);
         setConsulta(consulta);
         setData(data);
@@ -26,11 +26,11 @@ public class Receita
         }
     }
 
-    public String getConsulta() {
+    public Consulta getConsulta() {
         return consulta;
     }
 
-    public void setConsulta(String consulta) {
+    public void setConsulta(Consulta consulta) {
         this.consulta = consulta;
     }
 

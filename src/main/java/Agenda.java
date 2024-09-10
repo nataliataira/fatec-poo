@@ -3,12 +3,12 @@ public class Agenda
     private long codigo;
     private String data;
     private String hora;
-    private String medico;
-    private String paciente;
+    private Medico medico;
+    private Paciente paciente;
 
     public Agenda() {}
 
-    public Agenda(long codigo, String data, String hora, String medico, String paciente) throws Exception   {
+    public Agenda(long codigo, String data, String hora, Medico medico, Paciente paciente) throws Exception   {
         setCodigo(codigo);
         setData(data);
         setHora(hora);
@@ -44,25 +44,19 @@ public class Agenda
         this.hora = hora;
     }
 
-    public String getMedico() {
+    public Medico getMedico() {
         return medico;
     }
 
-    public void setMedico(String medico) throws Exception{
-        if (medico.isEmpty()) {
-            throw new Exception("O nome do médico deve ser preenchido.");
-        } else if (medico.length() > 100) {
-            throw new Exception("Nome deve ter entre 1 e 100 caracteres.");
-        } else {
+    public void setMedico(Medico medico) throws Exception {
             this.medico = medico;
-        }
     }
 
-    public String getPaciente() {
+    public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(String paciente) {
+    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 

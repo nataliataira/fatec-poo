@@ -67,7 +67,7 @@ public class Recepcionista
     }
 
     public String getSenha() {
-        return senha;
+        return "*****";
     }
 
     public void setSenha(String senha) throws Exception {

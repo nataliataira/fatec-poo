@@ -1,13 +1,13 @@
 public class Exame
 {
     private long codigo;
-    private Consulta consulta;
+    private String consulta;
     private String data;
     private String descritivo;
 
     public Exame() {}
 
-    public Exame(Consulta consulta, String data, String descritivo) throws Exception {
+    public Exame(long codigo, String consulta, String data, String descritivo) throws Exception {
         setCodigo(codigo);
         setConsulta(consulta);
         setData(data);
@@ -26,11 +26,11 @@ public class Exame
         }
     }
 
-    public Consulta getConsulta() {
+    public String getConsulta() {
         return consulta;
     }
 
-    public void setConsulta(Consulta consulta) {
+    public void setConsulta(String consulta) {
         this.consulta = consulta;
     }
 

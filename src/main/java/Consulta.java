@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Consulta
 {
     private long codigo;
@@ -7,6 +9,9 @@ public class Consulta
     private Paciente paciente;
     private String motivo;
     private String historico;
+    private Agenda agenda;
+    private List<Receita> receitas;
+    private List<Exame> exames;
 
     public Consulta() {}
 
@@ -81,6 +86,30 @@ public class Consulta
         this.historico = historico;
     }
 
+    public Agenda getAgenda() {
+        return agenda;
+    }
+
+    public void setAgenda(Agenda agenda) {
+        this.agenda = agenda;
+    }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
+    }
+
+    public List<Exame> getExames() {
+        return exames;
+    }
+
+    public void setExames(List<Exame> exames) {
+        this.exames = exames;
+    }
+
     public void marcar()
     {
         //TODO
@@ -112,9 +141,16 @@ public class Consulta
         System.out.println("codigo:"+ getCodigo());
         System.out.println("data:"+ getData());
         System.out.println("hora:"+ getHora());
-        System.out.println("medico:"+ getMedico());
-        System.out.println("paciente:"+ getPaciente());
+        getMedico().mostrar();
+        getPaciente().mostrar();
         System.out.println("motivo:"+ getMotivo());
         System.out.println("historico:"+ getHistorico());
+        System.out.println("histórico: "+getHistorico());
+        for (Receita rec: getReceitas()) {
+            rec.mostrar();
+        }
+        for (Exame exam: getExames()) {
+            exam.mostrar();
+        }
     }
 }

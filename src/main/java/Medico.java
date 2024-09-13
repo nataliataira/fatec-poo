@@ -57,7 +57,9 @@ public class Medico
     }
 
     public void setTelefone(String telefone) throws Exception {
-        if (!telefone.matches("[0-9]+")) {
+        if (telefone.isEmpty()) {
+            throw new Exception("O telefone não deve estar vazio.");
+        } else if (!telefone.matches("[0-9]+")) {
             throw new Exception("O telefone não deve conter letras.");
         } else {
             this.telefone = telefone;
@@ -80,7 +82,7 @@ public class Medico
         if (senha.length() < 5) {
             throw new Exception("Senha muito curta.");
         } else {
-            this.senha = telefone;
+            this.senha = senha;
         }
     }
 
@@ -98,5 +100,13 @@ public class Medico
         System.out.println("telefone:"+ getTelefone());
         System.out.println("especialidade:"+ getEspecialidade());
         System.out.println("senha:"+ getSenha());
+    }
+
+    public void receitar(Consulta consultas) throws Exception {
+        Receita novaReceita  = new Receita(1, "teste", "teste", "teste");
+        consultas.getReceitas().add(novaReceita);
+
+        Exame novoExame = new Exame(1, "teste", "teste", "teste");
+        consultas.getExames().add(novoExame);
     }
 }

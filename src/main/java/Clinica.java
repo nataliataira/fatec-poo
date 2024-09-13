@@ -15,14 +15,14 @@ public class Clinica
             Agenda hoje = new Agenda(502, "15/08/2024", "21:09", med1, pNovo);
             hoje.mostrar();
 
-            Consulta c1 = new Consulta(656, "16/08/2024","08:30",med1, pNovo,"dor de cabeça", "enxaqueca crônica");
-            c1.mostrar();
+//            Consulta c1 = new Consulta(656, "16/08/2024","08:30",med1, pNovo,"dor de cabeça", "enxaqueca crônica");
+//            c1.mostrar();
 
-            Exame hemograma = new Exame(c1, "16/08/2024", "Baixa contagem de hemácias: anemia");
-            hemograma.mostrar();
-
-            Receita r1 = new Receita(c1, "16/08/2024", "Tomar dramin b6 e suplemento de Ferro 100mg");
-            r1.mostrar();
+//            Exame hemograma = new Exame(c1, "16/08/2024", "Baixa contagem de hemácias: anemia");
+//            hemograma.mostrar();
+//
+//            Receita r1 = new Receita(c1, "16/08/2024", "Tomar dramin b6 e suplemento de Ferro 100mg");
+//            r1.mostrar();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

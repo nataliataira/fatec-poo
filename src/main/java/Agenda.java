@@ -48,8 +48,8 @@ public class Agenda
         return medico;
     }
 
-    public void setMedico(Medico medico) throws Exception {
-            this.medico = medico;
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
     public Paciente getPaciente() {
@@ -71,7 +71,7 @@ public class Agenda
         System.out.println("codigo:"+ getCodigo());
         System.out.println("data:"+ getData());
         System.out.println("hora:"+ getHora());
-        System.out.println("medico:"+ getMedico());
-        System.out.println("paciente:"+ getPaciente());
+        getMedico().mostrar();
+        getPaciente().mostrar();
     }
 }

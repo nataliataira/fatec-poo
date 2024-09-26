@@ -1,11 +1,7 @@
-public class Medico
+public class Medico extends Funcionario
 {
-    private long codigo;
-    private String nome;
     private String crm;
-    private String telefone;
     private String especialidade;
-    private String senha;
 
     public Medico() {}
 
@@ -18,32 +14,6 @@ public class Medico
         setSenha(senha);
     }
 
-    public long getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(long codigo) throws Exception {
-        if (codigo <= 0) {
-            throw new Exception("Código não pode ser menor ou igual a zero.");
-        } else {
-            this.codigo = codigo;
-        }
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) throws Exception {
-        if (nome.isEmpty()) {
-            throw new Exception("O nome deve ser preenchido.");
-        } else if (nome.length() > 100) {
-            throw new Exception("Nome deve ter entre 1 e 100 caracteres.");
-        } else {
-            this.nome = nome;
-        }
-    }
-
     public String getCrm() {
         return crm;
     }
@@ -52,43 +22,12 @@ public class Medico
         this.crm = crm;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) throws Exception {
-        if (telefone.isEmpty()) {
-            throw new Exception("O telefone não deve estar vazio.");
-        } else if (!telefone.matches("[0-9]+")) {
-            throw new Exception("O telefone não deve conter letras.");
-        } else {
-            this.telefone = telefone;
-        }
-    }
-
     public String getEspecialidade() {
         return especialidade;
     }
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
-    }
-
-    public String getSenha() {
-        return "*****";
-    }
-
-    public void setSenha(String senha) throws Exception{
-        if (senha.length() < 5) {
-            throw new Exception("Senha muito curta.");
-        } else {
-            this.senha = senha;
-        }
-    }
-
-    public void acessar()
-    {
-        //TODO
     }
 
     public void mostrar()
@@ -100,13 +39,5 @@ public class Medico
         System.out.println("telefone:"+ getTelefone());
         System.out.println("especialidade:"+ getEspecialidade());
         System.out.println("senha:"+ getSenha());
-    }
-
-    public void receitar(Consulta consultas) throws Exception {
-        Receita novaReceita  = new Receita(1, "teste", "teste", "teste");
-        consultas.getReceitas().add(novaReceita);
-
-        Exame novoExame = new Exame(1, "teste", "teste", "teste");
-        consultas.getExames().add(novoExame);
     }
 }

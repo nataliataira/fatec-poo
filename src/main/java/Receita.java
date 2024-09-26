@@ -1,53 +1,17 @@
-public class Receita
+public class Receita extends Procedimento
 {
-    private long codigo;
-    private String consulta;
-    private String data;
-    private String descritivo;
-
-    public Receita() {}
-
-    public Receita(long codigo, String consulta, String data, String descritivo) throws Exception {
+    public Receita(long codigo, Consulta consulta, String data, String descritivo) throws Exception
+    {
         setCodigo(codigo);
-        setConsulta(consulta);
         setData(data);
         setDescritivo(descritivo);
     }
 
-    public long getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(long codigo) throws Exception {
-        if (codigo <= 0) {
-            throw new Exception("Código não pode ser menor ou igual a zero.");
-        } else {
-            this.codigo = codigo;
-        }
-    }
-
-    public String getConsulta() {
-        return consulta;
-    }
-
-    public void setConsulta(String consulta) {
-        this.consulta = consulta;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public String getDescritivo() {
-        return descritivo;
-    }
-
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
+    public void mostrar(){
+        System.out.println("RECEITA>>>>>>>>>>>>>>>>");
+        System.out.println("codigo:"+ getCodigo());
+        System.out.println("data:"+ getData());
+        System.out.println("descritivo:"+ getDescritivo());
     }
 
     public void preescrever()
@@ -55,17 +19,8 @@ public class Receita
         //TODO
     }
 
-    public void consultar()
-    {
+    public void consultar(){
         //TODO
     }
 
-    public void mostrar()
-    {
-        System.out.println("Receita>>>>>>>>>>");
-        System.out.println("codigo:"+ getCodigo());
-        System.out.println("consulta:"+ getConsulta());
-        System.out.println("data:"+ getData());
-        System.out.println("descritivo:"+ getDescritivo());
-    }
 }

@@ -30,4 +30,10 @@ public abstract class Procedimento {
     public void setDescritivo(String descritivo) {
         this.descritivo = descritivo;
     }
+
+    public void consultar()
+    {
+        System.out.println("data: " + getData());
+        System.out.println("descritivo: " + getDescritivo());
+    }
 }

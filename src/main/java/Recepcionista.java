@@ -34,9 +34,12 @@ public class Recepcionista extends Funcionario
         System.out.println("senha:"+ getSenha());
     }
 
-    public  void acessar(){
-        //todo
+    @Override
+    public void acessar() {
+        super.acessar();
+        System.out.println("cpf: " + getCpf());
     }
+
 
     public void consultar() throws Exception {
         //todo

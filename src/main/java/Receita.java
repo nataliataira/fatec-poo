@@ -14,12 +14,15 @@ public class Receita extends Procedimento
         System.out.println("descritivo:"+ getDescritivo());
     }
 
-    public void preescrever()
-    {
-        //TODO
+    @Override
+    public void consultar() {
+        System.out.println("Receita: ");
+        super.consultar();
+
     }
 
-    public void consultar(){
+    public void preescrever()
+    {
         //TODO
     }
 

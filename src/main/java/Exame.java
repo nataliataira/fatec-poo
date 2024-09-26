@@ -19,7 +19,10 @@ public class Exame extends Procedimento
         //todo
     }
 
-    public void consultar(){
-        //todo
+    @Override
+    public void consultar() {
+        System.out.println("Exame: ");
+        super.consultar();
+
     }
 }

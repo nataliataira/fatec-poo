@@ -74,4 +74,13 @@ public class Agenda
         getMedico().mostrar();
         getPaciente().mostrar();
     }
+
+    public void acessar()
+    {
+        System.out.println("Agenda da clinica");
+        System.out.println("data: " + getData());
+        System.out.println("hora: " + getHora());
+        System.out.println("medico: " + getMedico());
+        System.out.println("paciente: " + getPaciente());
+    }
 }

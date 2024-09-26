@@ -46,4 +46,12 @@ public abstract class Funcionario
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void acessar()
+    {
+        System.out.println("Funcionário: " + getNome() + " acessou o sistema.");
+        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Senha: *****");
+    }
+
 }

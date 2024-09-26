@@ -61,9 +61,18 @@ public class Consulta extends Agenda
         //TODO
     }
 
-    public void consultar()
-    {
-        //TODO
+    @Override
+    public void acessar() {
+        super.acessar();
+        System.out.println("motivo da consulta: " + getMotivo());
+        System.out.println("histórico do paciente: " + getHistorico());
+        System.out.println("motivo da consulta: " + getMotivo());
+        for (Receita rec: getReceitas()) {
+             rec.mostrar();
+        }
+        for (Exame exam: getExames()) {
+            exam.mostrar();
+        }
     }
 
     public void realizar()

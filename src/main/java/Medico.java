@@ -40,4 +40,11 @@ public class Medico extends Funcionario
         System.out.println("especialidade:"+ getEspecialidade());
         System.out.println("senha:"+ getSenha());
     }
+
+    @Override
+    public void acessar() {
+        super.acessar();
+        System.out.println("crm: " + getCrm());
+        System.out.println("especialidade: " + getEspecialidade());
+    }
 }
